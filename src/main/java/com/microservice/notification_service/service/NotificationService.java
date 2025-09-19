@@ -25,10 +25,11 @@ public class NotificationService {
 
         MimeMessagePreparator messagePreparator = mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
-            messageHelper.setFrom("rauljosema70@gmail.com");
+           // messageHelper.setFrom("rauljosema70@gmail.com");
+            messageHelper.setFrom("ToDo@gmail.com");
             messageHelper.setTo(userEvent.email());
             messageHelper.setSubject("Probando kafka");
-            messageHelper.setText("Hola "+userEvent.name()+ " tu cuenta se ha registrado correctamente");
+            messageHelper.setText("Hola "+userEvent.email()+ " Tienes una nueva solicitud de amistad.");
         };
         try {
             javaMailSender.send(messagePreparator);
